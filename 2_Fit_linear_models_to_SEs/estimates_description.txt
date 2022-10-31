@@ -1,0 +1,36 @@
+ESTIMATES_DESCRIPTION
+
+Running the R-file analysis.R in this folder will create the file estimates.RData in this folder.
+We here describe the data objects that are contained in the file estimates.RData.
+There are several arrays in the data file. To understand the structure (i.e., the dimensions) of each array, you may run the following lines in R:
+dim(array)
+dimnames(array)
+
+# ARRAY: bias
+the difference between each estimate from an occupancy model and the true value
+
+# ARRAY: biasmedian
+median across the bias for each combination of parameter value and scenario
+
+# ARRAY: esti
+the 'cleaned' estimates from fitting occupancy models to the simulated data (all non-valid estimates have been replaced with NA in this array)
+
+# ARRAY: estimean
+means across all valid estimates (=esti) for each combination of parameter value and scenario
+
+# ARRAY: lmerSE
+the estimates from fitting the linear regression models to the standard errors of the occupancy estimates
+
+# VECTOR: pvals
+the different levels of occupancy probability psi and detection probability p that were used to simulate the data: a scale with intervals of 0.02 that goes from 0.1 to 0.9 (with a total length of 41)
+
+# VECTOR: S
+the different levels of Number of single-visit sites: 0, 150, 500, 1000, 5000
+
+# NUMERIC: simrep
+the number of simulation replicates that were run for each parameter combination: 1000
+
+# ARRAY: validity
+the proportions of valid estimates for each combination of parameter value and scenario in relation to the number that was simulated (i.e., 1000)
+
+

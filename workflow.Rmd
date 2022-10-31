@@ -1,0 +1,68 @@
+---
+title: "Workflow"
+author: "Gesa von Hirschheydt"
+date: "2022-10-27"
+output: html_document
+---
+
+The code in this file will, if run in the given order, reproduce the data, figures, and numbers presented in the publication:
+
+von Hirschheydt, G., Stofer, S., Kéry, M. 2022/2023: “Mixed” occupancy designs: when do additional single-visit data improve the inferences from standard multi-visit models?
+
+
+# 1. Simulate data & fit occupancy models
+
+Running the code in this section will produce 6 files and place them into the folder `1_Simulate_data_and_fit_occupancy_models`:
+
+ * Case2x150_CovNull.RData
+ * Case2x300.RData
+ * Case4x150.RData
+ * CovOcc.RData
+ * CovDet.RData
+ * CovBoth.RData
+
+
+**IMPORTANT:** Each line in the following chunk will take **between 6 and 10 days** to run! We therefore highly recommend that you run the 6 R-files in parallel on different cores using a High Performance Cluster.
+
+```{r SimulateOccupancy}
+source('1_Simulate_data_and_fit_occupancy_models/Case2x150_CovNull.R')
+source('1_Simulate_data_and_fit_occupancy_models/Case2x300.R')
+source('1_Simulate_data_and_fit_occupancy_models/Case4x150.R')
+source('1_Simulate_data_and_fit_occupancy_models/CovOcc.R')
+source('1_Simulate_data_and_fit_occupancy_models/CovDet.R')
+source('1_Simulate_data_and_fit_occupancy_models/CovBoth.R')
+```
+
+
+# 2. Fit linear models to SEs
+
+The following code chunk takes approximately 2 hours to run.
+
+Running the code in this section will produce a single large file (approximately 8.6 GB) and place it into the folder `2_Fit_linear_models_to_SEs`:
+
+ * estimates.RData
+
+Running the code chunk will take approximately 2.5 hours!
+
+```{r LinearModels}
+source('2_Fit_linear_models_to_SEs/analysis.R')
+```
+
+
+# Make figures and extract numbers
+
+Running the first code chunk in this section will produce files with the figures used in the main publication and place them into the folder `3_Make_figures_and_extract_numbers`.
+
+Running this code chunk takes roughly 1 minute.
+
+```{r FiguresManuscript}
+source('3_Make_figures_and_extract_numbers/figures_and_numbers.R')
+```
+
+Running the next code chunk in this section will produce files with the figures presented in the Appendices and place them into the folder `3_Make_figures_and_extract_numbers`.
+
+Running this code chunk takes roughly 1 minute.
+
+```{r FiguresAppendix}
+source('3_Make_figures_and_extract_numbers/supplementary_figures.R')
+```
