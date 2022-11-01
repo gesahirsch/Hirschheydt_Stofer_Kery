@@ -114,7 +114,7 @@ for(a in 1:length(simnames)){
   # legend(x=0, y=0, xjust=0.5, yjust=0.5, pch=15, cex=1.6, bty="n",
   #        col=rev(c("black","red3","goldenrod2","forestgreen")), legend=rev(paste(round(seq(zlim[1],zlim[2],length.out=4),2))))
   # dev.off()
-  # rm(zvalue,zlim)
+  # rm(zvalue,zlim,mapPalette)
 
   
   # ...Fit linear mixed models to SEs  ####
@@ -233,5 +233,5 @@ for(s in 1:length(simnames)){
 #  Clean and save workspace  ####
 
 cat(paste('\n*** Saving workspace ***'))
-rm(a,i,j,k,p,s,J,M,N,mapPalette,SEs,simulated_data,simnames)
+rm(a,i,j,k,p,s,J,M,N,SEs,simulated_data,simnames)
 save.image('estimates.RData')
