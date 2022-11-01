@@ -93,7 +93,7 @@ for(a in 1:length(simnames)){
     }
   }
 
-  rm(case,esti1)
+  rm(case,esti1,index.valid,index.na)
   save.image('estimates.RData')
 
   # # Save plots with proportions of valid estimates
@@ -114,6 +114,7 @@ for(a in 1:length(simnames)){
   # legend(x=0, y=0, xjust=0.5, yjust=0.5, pch=15, cex=1.6, bty="n",
   #        col=rev(c("black","red3","goldenrod2","forestgreen")), legend=rev(paste(round(seq(zlim[1],zlim[2],length.out=4),2))))
   # dev.off()
+  # rm(zvalue,zlim)
 
   
   # ...Fit linear mixed models to SEs  ####
@@ -148,7 +149,7 @@ for(a in 1:length(simnames)){
       }
     }
 
-    rm(fm,yy,sel.SEs,index.na,index.valid,zvalue,zlim)
+    rm(fm,yy,sel.SEs)
     if(i %in% c(10, 20, 30, 41)){
       cat(paste('\n*** Saving', simnames[a], '***'))
       save.image('estimates.RData')
