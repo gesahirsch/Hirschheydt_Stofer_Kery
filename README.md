@@ -1,5 +1,9 @@
 HIRSCHHEYDT_STOFER_KERY
 
+
+[![DOI](https://zenodo.org/badge/493551256.svg)](https://zenodo.org/badge/latestdoi/493551256)
+
+
 This repository contains all the code used for the data simulation & analysis, and the code necessary to reproduce the figures and numbers presented in the article von Hirschheydt, G., Stofer, S., Kéry, M. “Mixed” occupancy designs: when do additional single-visit data improve the inferences from standard multi-visit models?
 
 
