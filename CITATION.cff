@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "von Hirschheydt"
+  given-names: "Gesa"
+  orcid: "https://orcid.org/0000-0001-7930-2527"
+- family-names: "Stofer"
+  given-names: "Silvia"
+  orcid: "https://orcid.org/0000-0001-8581-7789"
+- family-names: "Kéry"
+  given-names: "Marc"
+  orcid: "https://orcid.org/0000-0001-7476-7616"
+title: "My Research Software"
+version: 1.0.0
+doi: 10.5281/zenodo.7272029
+date-released: 2022-11-01
+url: "https://doi.org/10.5281/zenodo.7272029"
